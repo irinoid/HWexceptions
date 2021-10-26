@@ -1,7 +1,0 @@
-package work.with.exceptions.HWexceptions;
-
-public interface EmployeeServiceInterface {
-    Employee addEmployee(String lastName, String firstName);
-    String deleteEmployee(String lastName, String firstName)throws EmpNotFoundException;
-    Employee findEmployee(String lastName, String firstName)throws EmpNotFoundException;
-}

@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/employee")
 @RestController
 public class EmployeeController {
-    private final EmployeeServiceInterface employeeService;
+    private final EmployeeService employeeService;
 
-    public EmployeeController(EmployeeServiceInterface employeeService) {
+    public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
@@ -21,7 +21,7 @@ public class EmployeeController {
 
     @GetMapping("/remove")
     public String deleteEmployee(@RequestParam String lastName, @RequestParam String firstName) throws EmpNotFoundException {
-        return employeeService.deleteEmployee(lastName, firstName);
+        return "Сотрудник " + employeeService.deleteEmployee(lastName, firstName) + " удален.";
     }
 
     @GetMapping("/find")

@@ -5,7 +5,5 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 public class EmpIntServErrException extends InternalError {
-    public EmpIntServErrException() {
-        super();
-    }
+
 }
