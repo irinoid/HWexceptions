@@ -21,7 +21,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return firstName + lastName;
+        return firstName + " "+lastName;
     }
 
     @Override

@@ -30,12 +30,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public String deleteEmployee(String lastName, String firstName) throws EmpNotFoundException {
-
+    public Employee deleteEmployee(String lastName, String firstName) throws EmpNotFoundException {
+        Employee delEmp = new Employee(lastName, firstName);
         for (int i = 0; i < employee.length; i++) {
-            if ((employee[i].getFirstName().equals(firstName)) && (employee[i].getLastName().equals(lastName))) {
+            if (employee[i].equals(delEmp)) {
                 employee[i] = null;
-                return lastName + " " + firstName;
+                return delEmp;
             }
         }
         throw new EmpNotFoundException();
@@ -43,10 +43,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee findEmployee(String lastName, String firstName) throws EmpNotFoundException {
-
+        Employee findEmp = new Employee(lastName, firstName);
         for (int i = 0; i < employee.length; i++) {
-            if ((employee[i].getFirstName().equals(firstName)) && (employee[i].getLastName().equals(lastName))) {
-                return employee[i];
+            if (employee[i].equals(findEmp)) {
+                return findEmp;
             }
         }
         throw new EmpNotFoundException();
